@@ -12,7 +12,7 @@ API Endpoints:
 * [Hacker News API Documentation](https://github.com/hackernews/api)
 * [sqflite 2.0.0+3](https://pub.dev/packages/sqflite)
 * [path_provider 2.0.1](https://pub.dev/packages/path_provider)
-* []()
+* [JSON and serialization](https://flutter.dev/docs/development/data-and-backend/json)
 * []()
 
 
