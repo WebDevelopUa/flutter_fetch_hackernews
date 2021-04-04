@@ -13,7 +13,11 @@ API Endpoints:
 * [sqflite 2.0.0+3](https://pub.dev/packages/sqflite)
 * [path_provider 2.0.1](https://pub.dev/packages/path_provider)
 * [JSON and serialization](https://flutter.dev/docs/development/data-and-backend/json)
-* []()
+* [http 0.13.1](https://pub.dev/packages/http)
+* [HTTP package documentation](https://pub.dev/documentation/http/latest/)
+* [Client class](https://pub.dev/documentation/http/latest/http/Client-class.html)
+* [http.testing library](https://pub.dev/documentation/http/latest/http.testing/http.testing-library.html)
+* [MockClient class](https://pub.dev/documentation/http/latest/http.testing/MockClient-class.html)
 
 
  --------
