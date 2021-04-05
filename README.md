@@ -17,6 +17,7 @@ API Endpoints:
 * [HTTP package documentation](https://pub.dev/documentation/http/latest/)
 * [Client class](https://pub.dev/documentation/http/latest/http/Client-class.html)
 * [http.testing library](https://pub.dev/documentation/http/latest/http.testing/http.testing-library.html)
+* [test 1.16.8](https://pub.dev/packages/test)
 * [MockClient class](https://pub.dev/documentation/http/latest/http.testing/MockClient-class.html)
 
 
@@ -29,6 +30,7 @@ Run in terminal:
 flutter pub get
 flutter doctor
 flutter run
+flutter test
 ```
 
 Open web-browser [http://localhost:50743/](http://localhost:50743/)
