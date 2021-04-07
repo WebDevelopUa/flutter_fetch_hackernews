@@ -19,6 +19,9 @@ API Endpoints:
 * [http.testing library](https://pub.dev/documentation/http/latest/http.testing/http.testing-library.html)
 * [test 1.16.8](https://pub.dev/packages/test)
 * [MockClient class](https://pub.dev/documentation/http/latest/http.testing/MockClient-class.html)
+* [List<E> class](https://api.flutter.dev/flutter/dart-core/List-class.html)
+* [cast<R> method](https://api.flutter.dev/flutter/dart-core/List/cast.html)
+* [SQLite](https://sqlite.org/docs.html)
 
 
  --------
