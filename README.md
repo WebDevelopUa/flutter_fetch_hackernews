@@ -2,9 +2,21 @@
 
 A new Flutter pet-project. With a local cache (Sqlite DB on Device).
 
-API Endpoints:
+### API Endpoints:
+
 * [Top Stories](https://hacker-news.firebaseio.com/v0/topstories.json)
 * [n-Story Item by ID](https://hacker-news.firebaseio.com/v0/item/26690126.json)
+
+ --------
+
+### App flow:
+
+1. Fetch Top news
+2. Fetch certain News item (with ID 20)
+3. Check the certain News item (with ID 20) was fetched before (Repository):
+- 3.1. (NewsDbProvider => SQLite => Get item => Print item)
+- 3.2. (NewsApiProvider => HackerNewsApi => Fetch item => Print item)
+4. Put certain News item (with ID 20) to DB (NewsDbProvider => SQLite => Put item)
 
  --------
 
@@ -22,7 +34,6 @@ API Endpoints:
 * [List<E> class](https://api.flutter.dev/flutter/dart-core/List-class.html)
 * [cast<R> method](https://api.flutter.dev/flutter/dart-core/List/cast.html)
 * [SQLite](https://sqlite.org/docs.html)
-
 
  --------
 

@@ -1,9 +1,10 @@
+/// App (fetch item) => Repository => NewsDbProvider (SQLite) || NewsApiProvider (HackerNewsApi)
+/// mediation access to NewsDbProvider or NewsApiProvider
+
 import 'dart:async';
-
-import 'package:flutter_fetch_hackernews/src/models/item_model.dart';
-
-import '../resources/news_api_provider.dart';
-import '../resources/news_db_provider.dart';
+import 'news_api_provider.dart';
+import 'news_db_provider.dart';
+import '../models/item_model.dart';
 
 class Repository {
   NewsDbProvider dbProvider = NewsDbProvider();
