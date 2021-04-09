@@ -32,3 +32,7 @@ abstract class Source {
 
   Future<ItemModel> fetchItem(int id);
 }
+
+abstract class Cache {
+  Future<int> addItem(ItemModel item);
+}
