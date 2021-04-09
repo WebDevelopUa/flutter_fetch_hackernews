@@ -14,9 +14,13 @@ A new Flutter pet-project. With a local cache (Sqlite DB on Device).
 1. Fetch Top news
 2. Fetch certain News item (with ID 20)
 3. Check the certain News item (with ID 20) was fetched before (Repository):
-- 3.1. (NewsDbProvider => SQLite => Get item => Print item)
-- 3.2. (NewsApiProvider => HackerNewsApi => Fetch item => Print item)
+
+- 3.1. (NewsDbProvider => SQLite => Get item)
+- 3.2. (NewsApiProvider => HackerNewsApi => Fetch item)
+
 4. Put certain News item (with ID 20) to DB (NewsDbProvider => SQLite => Put item)
+5. BLoC Widget
+6. Display items on News List Screen
 
  --------
 
