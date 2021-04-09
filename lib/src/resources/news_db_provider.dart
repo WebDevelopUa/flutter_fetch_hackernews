@@ -4,9 +4,15 @@ import 'package:flutter_fetch_hackernews/src/models/item_model.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:path/path.dart';
+import 'repository.dart';
 
-class NewsDbProvider {
+class NewsDbProvider implements Source {
   Database db;
+
+  // TODO: store & fetch Top IDs
+  Future<List<int>> fetchTopIds() {
+    return null;
+  }
 
   void init() async {
     Directory documentDirectory = await getApplicationDocumentsDirectory();
