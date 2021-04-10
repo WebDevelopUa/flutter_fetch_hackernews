@@ -47,6 +47,7 @@ Flutter pet-project with local cache (Sqlite DB on Device) & BLoC pattern.
 * [ListView.builder constructor](https://api.flutter.dev/flutter/widgets/ListView/ListView.builder.html)
 * [rxdart 0.26.0](https://pub.dev/packages/rxdart)
 * [AsyncSnapshot<T> class](https://api.flutter.dev/flutter/widgets/AsyncSnapshot-class.html)
+* [CircularProgressIndicator class](https://api.flutter.dev/flutter/material/CircularProgressIndicator-class.html)
 
 
  --------
