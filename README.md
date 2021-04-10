@@ -1,6 +1,6 @@
 # Flutter Fetch Hacker News App
 
-A new Flutter pet-project. With a local cache (Sqlite DB on Device).
+Flutter pet-project with local cache (Sqlite DB on Device) & BLoC pattern.
 
 ### API Endpoints:
 
@@ -19,7 +19,11 @@ A new Flutter pet-project. With a local cache (Sqlite DB on Device).
 - 3.2. (NewsApiProvider => HackerNewsApi => Fetch item)
 
 4. Put certain News item (with ID 20) to DB (NewsDbProvider => SQLite => Put item)
-5. BLoC Widget
+5. BLoC Widgets (StreamController, RxDart):
+
+- 5.1. Stories BLoC (Top News screen)
+- 5.2. Comments BLoC (Story details + Comments screen)
+
 6. Display items on News List Screen
 
  --------
@@ -38,6 +42,12 @@ A new Flutter pet-project. With a local cache (Sqlite DB on Device).
 * [List<E> class](https://api.flutter.dev/flutter/dart-core/List-class.html)
 * [cast<R> method](https://api.flutter.dev/flutter/dart-core/List/cast.html)
 * [SQLite](https://sqlite.org/docs.html)
+* [FutureBuilder<T> class](https://api.flutter.dev/flutter/widgets/FutureBuilder-class.html)
+* [ListView class](https://api.flutter.dev/flutter/widgets/ListView-class.html)
+* [ListView.builder constructor](https://api.flutter.dev/flutter/widgets/ListView/ListView.builder.html)
+* [rxdart 0.26.0](https://pub.dev/packages/rxdart)
+* [AsyncSnapshot<T> class](https://api.flutter.dev/flutter/widgets/AsyncSnapshot-class.html)
+
 
  --------
 
