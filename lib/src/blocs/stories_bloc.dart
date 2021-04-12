@@ -1,5 +1,8 @@
 /// Top News Screen - NewsList Widget
 /// fetch id => stream => transformer => cache map => add id
+/// itemsFetcher (StreamController) => Transformer => itemsOutput(StreamController) =>
+/// => Stream Subscription (1 of n) => NewsListTile (StreamBuilder) (1 of n)
+
 import 'dart:async';
 import 'package:rxdart/rxdart.dart';
 import '../resources/repository.dart';
@@ -12,18 +15,19 @@ class StoriesBloc {
   final _topIds = PublishSubject<List<int>>();
 
   // Items Stream Controller (rx_subject lib)
-  final _items = BehaviorSubject<int>();
-
-  Stream<Map<int, Future<ItemModel>>> items;
+  final _itemsOutput = BehaviorSubject<Map<int, Future<ItemModel>>>();
+  final _itemsFetcher = PublishSubject<int>();
 
   // getter to Stream (adds data to stream)
   Stream<List<int>> get topIds => _topIds.stream;
 
+  Stream<Map<int, Future<ItemModel>>> get items => _itemsOutput.stream;
+
   // getter to Sinks (adds data to sink, every widget can access getter)
-  Function(int) get fetchItem => _items.sink.add;
+  Function(int) get fetchItem => _itemsFetcher.sink.add;
 
   StoriesBloc() {
-    items = _items.stream.transform(_itemsTransformer());
+    _itemsFetcher.stream.transform(_itemsTransformer()).pipe(_itemsOutput);
   }
 
   fetchTopIds() async {
@@ -45,6 +49,7 @@ class StoriesBloc {
 
   dispose() {
     _topIds.close();
-    _items.close();
+    _itemsOutput.close();
+    _itemsFetcher.close();
   }
 }
