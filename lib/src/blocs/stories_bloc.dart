@@ -14,11 +14,17 @@ class StoriesBloc {
   // Items Stream Controller (rx_subject lib)
   final _items = BehaviorSubject<int>();
 
+  Stream<Map<int, Future<ItemModel>>> items;
+
   // getter to Stream (adds data to stream)
   Stream<List<int>> get topIds => _topIds.stream;
 
   // getter to Sinks (adds data to sink, every widget can access getter)
   Function(int) get fetchItem => _items.sink.add;
+
+  StoriesBloc() {
+    items = _items.stream.transform(_itemsTransformer());
+  }
 
   fetchTopIds() async {
     final ids = await _repository.fetchTopIds();
