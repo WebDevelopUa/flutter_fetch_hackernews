@@ -1,6 +1,6 @@
 # Flutter Fetch Hacker News App
 
-Flutter pet-project with local cache (Sqlite DB on Device) & BLoC pattern.
+Flutter pet-project with local cache (Sqlite DB on Device) & BLoC pattern (multiple stream builders => single stream)
 
 ### API Endpoints:
 
@@ -46,9 +46,12 @@ Flutter pet-project with local cache (Sqlite DB on Device) & BLoC pattern.
 * [ListView class](https://api.flutter.dev/flutter/widgets/ListView-class.html)
 * [ListView.builder constructor](https://api.flutter.dev/flutter/widgets/ListView/ListView.builder.html)
 * [rxdart 0.26.0](https://pub.dev/packages/rxdart)
+* [Rx abstract class](https://pub.dev/documentation/rxdart/latest/rx/Rx-class.html)
+* [rx_transformers library](https://pub.dev/documentation/rxdart/latest/rx_transformers/rx_transformers-library.html)
+* [BehaviorSubject<T> class](https://pub.dev/documentation/rxdart/latest/rx/BehaviorSubject-class.html)  
+* [ScanStreamTransformer<S, T> class](https://pub.dev/documentation/rxdart/latest/rx/ScanStreamTransformer-class.html)
 * [AsyncSnapshot<T> class](https://api.flutter.dev/flutter/widgets/AsyncSnapshot-class.html)
 * [CircularProgressIndicator class](https://api.flutter.dev/flutter/material/CircularProgressIndicator-class.html)
-
 
  --------
 
