@@ -10,6 +10,7 @@ class NewsApiProvider implements Source {
   Client client = Client();
 
   Future<List<int>> fetchTopIds() async {
+    print('*****************  news_api_provider - fetchTopIds() ****************** #1');
     final response = await client.get(
       Uri.https(_root, 'v0/topstories.json'),
     );
@@ -19,6 +20,7 @@ class NewsApiProvider implements Source {
   }
 
   Future<ItemModel> fetchItem(int id) async {
+    print('*****************  news_api_provider - fetchItem(int id) ****************** #2');
     final response = await client.get(
       Uri.https(_root, 'v0/item/$id.json'),
     );

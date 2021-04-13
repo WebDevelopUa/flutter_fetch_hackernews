@@ -2,6 +2,7 @@ import 'dart:convert';
 
 class ItemModel {
   final int id;
+  final int descendants;
   final bool deleted;
   final String type;
   final String by;
@@ -13,13 +14,12 @@ class ItemModel {
   final String url;
   final int score;
   final String title;
-  final int descendants;
 
   ItemModel.fromJson(Map<String, dynamic> parsedJson)
       : id = parsedJson['id'],
         deleted = parsedJson['deleted'] ?? false,
         type = parsedJson['type'],
-        by = parsedJson['by'],
+        by = parsedJson['by'] ?? '',
         time = parsedJson['time'],
         text = parsedJson['text'] ?? '',
         dead = parsedJson['dead'] ?? false,
@@ -27,8 +27,8 @@ class ItemModel {
         kids = parsedJson['kids'] ?? [],
         url = parsedJson['url'],
         score = parsedJson['score'],
-        title = parsedJson['title'],
-        descendants = parsedJson['descendants'];
+        descendants = parsedJson['descendants'] ?? 0,
+        title = parsedJson['title'];
 
   ItemModel.fromDb(Map<String, dynamic> parsedJson)
       : id = parsedJson['id'],
@@ -42,24 +42,24 @@ class ItemModel {
         kids = jsonDecode(parsedJson['kids']),
         url = parsedJson['url'],
         score = parsedJson['score'],
-        title = parsedJson['title'],
-        descendants = parsedJson['descendants'];
+        descendants = parsedJson['descendants'],
+        title = parsedJson['title'];
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
-      'id': id,
-      'type': type,
-      'by': by,
-      'time': time,
-      'text': text,
-      'parent': parent,
-      'url': url,
-      'score': score,
-      'title': title,
-      'descendants': descendants,
-      'dead': dead ? 1 : 0,
-      'deleted': deleted ? 1 : 0,
-      'kids': jsonEncode(kids),
+      "id": id,
+      "type": type,
+      "by": by,
+      "time": time,
+      "text": text,
+      "parent": parent,
+      "url": url,
+      "score": score,
+      "descendants": descendants,
+      "dead": dead ? 1 : 0,
+      "deleted": deleted ? 1 : 0,
+      "kids": jsonEncode(kids),
+      "title": title,
     };
   }
 }
