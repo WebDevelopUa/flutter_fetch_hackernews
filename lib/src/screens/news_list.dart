@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_fetch_hackernews/src/widgets/news_list_tile.dart';
 import '../blocs/stories_provider.dart';
+import '../widgets/news_list_tile.dart';
 
 class NewsList extends StatelessWidget {
   Widget build(context) {

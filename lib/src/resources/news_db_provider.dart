@@ -1,9 +1,9 @@
-import 'dart:async';
 import 'dart:io';
-import 'package:flutter_fetch_hackernews/src/models/item_model.dart';
+import 'dart:async';
 import 'package:sqflite/sqflite.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:path/path.dart';
+import '../models/item_model.dart';
 import 'repository.dart';
 
 class NewsDbProvider implements Source, Cache {
@@ -19,8 +19,8 @@ class NewsDbProvider implements Source, Cache {
   }
 
   void init() async {
-    Directory documentDirectory = await getApplicationDocumentsDirectory();
-    final path = join(documentDirectory.path, 'items.db');
+    Directory documentsDirectory = await getApplicationDocumentsDirectory();
+    final path = join(documentsDirectory.path, "items.db");
     db = await openDatabase(
       path,
       version: 1,
@@ -40,8 +40,7 @@ class NewsDbProvider implements Source, Cache {
             url TEXT,
             score INTEGER,
             title TEXT,
-            descendants INTEGER;
-          )
+            descendants INTEGER,
         """);
       },
     );
@@ -51,7 +50,7 @@ class NewsDbProvider implements Source, Cache {
     final maps = await db.query(
       'Items',
       columns: null,
-      where: 'id == ?',
+      where: 'id = ?',
       whereArgs: [id],
     );
 
@@ -64,9 +63,14 @@ class NewsDbProvider implements Source, Cache {
 
   Future<int> addItem(ItemModel item) {
     return db.insert(
-      'Items',
+      "Items",
       item.toMap(),
+      conflictAlgorithm: ConflictAlgorithm.ignore,
     );
+  }
+
+  Future<int> clear() {
+    return db.delete("Items");
   }
 }
 

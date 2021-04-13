@@ -5,8 +5,8 @@
 
 import 'dart:async';
 import 'package:rxdart/rxdart.dart';
-import '../resources/repository.dart';
 import '../models/item_model.dart';
+import '../resources/repository.dart';
 
 class StoriesBloc {
   final _repository = Repository();
@@ -49,7 +49,7 @@ class StoriesBloc {
 
   dispose() {
     _topIds.close();
-    _itemsOutput.close();
     _itemsFetcher.close();
+    _itemsOutput.close();
   }
 }

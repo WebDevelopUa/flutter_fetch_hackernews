@@ -48,7 +48,7 @@ Flutter pet-project with local cache (Sqlite DB on Device) & BLoC pattern (multi
 * [rxdart 0.26.0](https://pub.dev/packages/rxdart)
 * [Rx abstract class](https://pub.dev/documentation/rxdart/latest/rx/Rx-class.html)
 * [rx_transformers library](https://pub.dev/documentation/rxdart/latest/rx_transformers/rx_transformers-library.html)
-* [BehaviorSubject<T> class](https://pub.dev/documentation/rxdart/latest/rx/BehaviorSubject-class.html)  
+* [BehaviorSubject<T> class](https://pub.dev/documentation/rxdart/latest/rx/BehaviorSubject-class.html)
 * [ScanStreamTransformer<S, T> class](https://pub.dev/documentation/rxdart/latest/rx/ScanStreamTransformer-class.html)
 * [AsyncSnapshot<T> class](https://api.flutter.dev/flutter/widgets/AsyncSnapshot-class.html)
 * [CircularProgressIndicator class](https://api.flutter.dev/flutter/material/CircularProgressIndicator-class.html)
@@ -56,18 +56,33 @@ Flutter pet-project with local cache (Sqlite DB on Device) & BLoC pattern (multi
  --------
 
 
-Run in terminal:
+Run in terminal (in project folder):
 
 ``` 
 flutter pub get
-flutter doctor
+flutter doctor -v
 flutter run
 flutter test
+flutter clean
 ```
 
 Open web-browser [http://localhost:50743/](http://localhost:50743/)
 
-In case of error:
+In case of errors:
+
+### path_provider error
+
+``` 
+errors.dart:187 Uncaught (in promise) 
+Error: MissingPluginException(No implementation found for method 
+getApplicationDocumentsDirectory on channel plugins.flutter.io/path_provider)
+```
+
+Instead of web-browser use Emulator
+
+- A Flutter plugin for finding commonly used locations on the filesystem.
+- Supports iOS, Android, Linux and MacOS.
+- Not all methods are supported on all platforms.
 
 ``` 
 Failed to establish connection with the application instance in Chrome.
