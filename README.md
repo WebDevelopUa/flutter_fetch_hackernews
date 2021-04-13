@@ -42,6 +42,7 @@ Flutter pet-project with local cache (Sqlite DB on Device) & BLoC pattern (multi
 * [List<E> class](https://api.flutter.dev/flutter/dart-core/List-class.html)
 * [cast<R> method](https://api.flutter.dev/flutter/dart-core/List/cast.html)
 * [SQLite](https://sqlite.org/docs.html)
+* [sqflite_common_ffi 2.0.0](https://pub.dev/packages/sqflite_common_ffi)
 * [FutureBuilder<T> class](https://api.flutter.dev/flutter/widgets/FutureBuilder-class.html)
 * [ListView class](https://api.flutter.dev/flutter/widgets/ListView-class.html)
 * [ListView.builder constructor](https://api.flutter.dev/flutter/widgets/ListView/ListView.builder.html)
@@ -52,6 +53,7 @@ Flutter pet-project with local cache (Sqlite DB on Device) & BLoC pattern (multi
 * [ScanStreamTransformer<S, T> class](https://pub.dev/documentation/rxdart/latest/rx/ScanStreamTransformer-class.html)
 * [AsyncSnapshot<T> class](https://api.flutter.dev/flutter/widgets/AsyncSnapshot-class.html)
 * [CircularProgressIndicator class](https://api.flutter.dev/flutter/material/CircularProgressIndicator-class.html)
+* [Platform class](https://api.dart.dev/stable/2.12.2/dart-io/Platform-class.html)
 
  --------
 
@@ -78,11 +80,13 @@ Error: MissingPluginException(No implementation found for method
 getApplicationDocumentsDirectory on channel plugins.flutter.io/path_provider)
 ```
 
-Instead of web-browser use Emulator
-
 - A Flutter plugin for finding commonly used locations on the filesystem.
 - Supports iOS, Android, Linux and MacOS.
 - Not all methods are supported on all platforms.
+- **[Using sqflite_ffi instead of sqflite](https://github.com/tekartik/sqflite/blob/master/sqflite_common_ffi/doc/using_ffi_instead_of_sqflite.md)**
+  − usqflite_common_ffi allows supporting Windows and Linux on DartVM or flutter.
+
+------
 
 ``` 
 Failed to establish connection with the application instance in Chrome.
