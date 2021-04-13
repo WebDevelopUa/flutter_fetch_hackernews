@@ -85,6 +85,7 @@ getApplicationDocumentsDirectory on channel plugins.flutter.io/path_provider)
 - Not all methods are supported on all platforms.
 - **[Using sqflite_ffi instead of sqflite](https://github.com/tekartik/sqflite/blob/master/sqflite_common_ffi/doc/using_ffi_instead_of_sqflite.md)**
   − usqflite_common_ffi allows supporting Windows and Linux on DartVM or flutter.
+- [sqflite_demo tests](https://github.com/maxgdev/sqflite_demo)  
 
 ------
 
