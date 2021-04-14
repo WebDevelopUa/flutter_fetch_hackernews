@@ -1,5 +1,6 @@
 /// App (fetch item) => Repository => NewsDbProvider (SQLite) || NewsApiProvider (HackerNewsApi)
 /// mediation access to NewsDbProvider or NewsApiProvider
+/// cache should be updated in some period of time (expire records) or pull down screen to refresh data
 
 import 'dart:async';
 import 'news_api_provider.dart';

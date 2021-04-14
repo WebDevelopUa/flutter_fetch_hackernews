@@ -1,3 +1,5 @@
+/// RefreshIndicator => StoriesBloc => Repository => DB Provider => dump all the Data in SqlDb
+
 import 'package:flutter/material.dart';
 import '../blocs/stories_provider.dart';
 
@@ -14,6 +16,7 @@ class Refresh extends StatelessWidget {
       onRefresh: () async {
         await bloc.clearCache();
         await bloc.fetchTopIds();
+        print('REFRESHED! ... DUMPED EVERYTHING in SqlDb');
       },
     );
   }

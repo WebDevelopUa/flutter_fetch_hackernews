@@ -23,10 +23,8 @@ class NewsListTile extends StatelessWidget {
           future: snapshot.data[itemId],
           builder: (context, AsyncSnapshot<ItemModel> itemSnapshot) {
             if (!itemSnapshot.hasData) {
-              // print('========================');
-              // print(itemSnapshot.data);
-              // print('========================');
-              return LoadingContainer();
+              // print('==== itemSnapshot.data:  ${itemSnapshot.data}  ====');
+              return  Text('Sorry, Something went wrong ... itemId: $itemId');
             }
 
             return buildTile(context, itemSnapshot.data);
@@ -36,6 +34,7 @@ class NewsListTile extends StatelessWidget {
     );
   }
 
+  // Helper function
   Widget buildTile(BuildContext context, ItemModel item) {
     return Column(
       children: [

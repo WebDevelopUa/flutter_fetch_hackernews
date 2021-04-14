@@ -1,6 +1,7 @@
 # Flutter Fetch Hacker News App
 
-Flutter pet-project with local cache (Sqlite DB on Device) & BLoC pattern (multiple stream builders => single stream)
+* Flutter pet-project with local cache (Sqlite DB on Device) & BLoC pattern (multiple stream builders => single stream).
+* Original [Hacker News Website](https://news.ycombinator.com/)
 
 ### API Endpoints:
 
@@ -54,6 +55,10 @@ Flutter pet-project with local cache (Sqlite DB on Device) & BLoC pattern (multi
 * [AsyncSnapshot<T> class](https://api.flutter.dev/flutter/widgets/AsyncSnapshot-class.html)
 * [CircularProgressIndicator class](https://api.flutter.dev/flutter/material/CircularProgressIndicator-class.html)
 * [Platform class](https://api.dart.dev/stable/2.12.2/dart-io/Platform-class.html)
+* [ListTile class](https://api.flutter.dev/flutter/material/ListTile-class.html)
+* [Divider class](https://api.flutter.dev/flutter/material/Divider-class.html)
+* [RefreshIndicator class](https://api.flutter.dev/flutter/material/RefreshIndicator-class.html)
+* [Generic Types](https://www.typescriptlang.org/docs/handbook/2/generics.html) annotates function return type
 
  --------
 
@@ -85,7 +90,7 @@ getApplicationDocumentsDirectory on channel plugins.flutter.io/path_provider)
 - Not all methods are supported on all platforms.
 - **[Using sqflite_ffi instead of sqflite](https://github.com/tekartik/sqflite/blob/master/sqflite_common_ffi/doc/using_ffi_instead_of_sqflite.md)**
   − usqflite_common_ffi allows supporting Windows and Linux on DartVM or flutter.
-- [sqflite_demo tests](https://github.com/maxgdev/sqflite_demo)  
+- [sqflite_demo tests](https://github.com/maxgdev/sqflite_demo)
 
 ------
 

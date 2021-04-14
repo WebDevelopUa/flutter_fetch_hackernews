@@ -23,29 +23,30 @@ class NewsDbProvider implements Source, Cache {
         '---------------  #1: news_db_provider - init() {path}  ---------------');
     Directory documentsDirectory = await getApplicationDocumentsDirectory();
 
-    final path = join(documentsDirectory.path, "xxx1.db");
+    final path = join(documentsDirectory.path, "xxx-db.db");
     print(path);
-    // /data/user/0/com.example.first_app/app_flutter/xxx1.db
+    // /data/user/0/com.example.first_app/app_flutter/xxx-db.db
 
     db = await openDatabase(path, version: 1,
         onCreate: (Database newDb, int version) async {
       var batch = newDb.batch();
 
       batch.execute(
-          'CREATE TABLE xxx (id INTEGER PRIMARY KEY, type TEXT, by TEXT, time INTEGER, text TEXT, parent INTEGER, kids BLOB, dead INTEGER, deleted INTEGER, url TEXT, score INTEGER, title TEXT, descendants INTEGER )');
+          'CREATE TABLE xxx_table (id INTEGER PRIMARY KEY, type TEXT, by TEXT, time INTEGER, text TEXT, parent INTEGER, kids BLOB, dead INTEGER, deleted INTEGER, url TEXT, score INTEGER, title TEXT, descendants INTEGER )');
       await batch.commit();
     });
   }
 
   Future<ItemModel> fetchItem(int id) async {
     var maps = await db.query(
-      "xxx",
+      "xxx_table",
       columns: null,
       where: "id = ?",
       whereArgs: [id],
     );
 
-    print('---------------   #2: news_db_provider - fetchItem(int id) maps  ---------------');
+    print(
+        '---------------   #2: news_db_provider - fetchItem(int id) maps  ---------------');
     // print(maps);
 
     if (maps.length > 0) {
@@ -57,14 +58,14 @@ class NewsDbProvider implements Source, Cache {
 
   Future<int> addItem(ItemModel item) {
     return db.insert(
-      "xxx",
+      "xxx_table",
       item.toMap(),
       conflictAlgorithm: ConflictAlgorithm.ignore,
     );
   }
 
   Future<int> clear() {
-    return db.delete("xxx");
+    return db.delete("xxx_table");
   }
 }
 
