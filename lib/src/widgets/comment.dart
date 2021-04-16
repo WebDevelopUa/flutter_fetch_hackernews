@@ -1,3 +1,5 @@
+/// Recursive loading of comments
+
 import 'dart:async';
 import 'package:flutter/material.dart';
 import '../models/item_model.dart';
@@ -28,12 +30,18 @@ class Comment extends StatelessWidget {
               right: 16.0,
               left: (depth + 1) * 16.0,
             ),
+            tileColor: Colors.blueGrey[50],
           ),
           Divider(),
         ];
+
         item.kids.forEach((kidId) {
           children.add(
-            Comment(itemId: kidId, itemMap: itemMap, depth: depth + 1),
+            Comment(
+              itemId: kidId,
+              itemMap: itemMap,
+              depth: depth + 1,
+            ),
           );
         });
 

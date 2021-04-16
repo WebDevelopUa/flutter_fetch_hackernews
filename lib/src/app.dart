@@ -31,6 +31,8 @@ class App extends StatelessWidget {
       return MaterialPageRoute(
         builder: (context) {
           final commentsBloc = CommentsProvider.of(context);
+
+          // extract ID from settings.name property (remove '/' and convert to int)
           final itemId = int.parse(settings.name.replaceFirst('/', ''));
 
           commentsBloc.fetchItemWithComments(itemId);

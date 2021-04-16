@@ -8,7 +8,7 @@ class NewsList extends StatelessWidget {
     final bloc = StoriesProvider.of(context);
 
     // TODO: delete it (used for testing purposes)
-    bloc.fetchTopIds();
+    // bloc.fetchTopIds();
 
     return Scaffold(
       appBar: AppBar(

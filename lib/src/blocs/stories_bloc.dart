@@ -9,6 +9,7 @@ import '../models/item_model.dart';
 import '../resources/repository.dart';
 
 class StoriesBloc {
+  // private variables (not accessible outside this file)
   final _repository = Repository();
 
   // TopIds Stream Controller (rx_subject lib)
@@ -39,12 +40,12 @@ class StoriesBloc {
     return _repository.clearCache();
   }
 
-  // helps to fix multiple StreamBuilders rebuild when new item comes to a Stream for individual events, using cache map
+  // helps to fix multiple StreamBuilders rebuild when new item comes
+  // to a Stream for individual events, using cache map
   _itemsTransformer() {
     return ScanStreamTransformer(
       (Map<int, Future<ItemModel>> cache, int id, index) {
-        // print('---------------------index');
-        // print(index);
+        print('-------- index: $index ');
         cache[id] = _repository.fetchItem(id);
         return cache;
       },

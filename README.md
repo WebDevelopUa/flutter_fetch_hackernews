@@ -58,6 +58,8 @@
 * [ListTile class](https://api.flutter.dev/flutter/material/ListTile-class.html)
 * [Divider class](https://api.flutter.dev/flutter/material/Divider-class.html)
 * [RefreshIndicator class](https://api.flutter.dev/flutter/material/RefreshIndicator-class.html)
+* [onGenerateRoute property](https://api.flutter.dev/flutter/material/MaterialApp/onGenerateRoute.html)
+* [Navigator class](https://api.flutter.dev/flutter/widgets/Navigator-class.html)
 * [Generic Types](https://www.typescriptlang.org/docs/handbook/2/generics.html) annotates function return type
 
  --------
