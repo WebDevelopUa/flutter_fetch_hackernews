@@ -54,9 +54,31 @@ class Comment extends StatelessWidget {
 
   Widget buildText(ItemModel item) {
     final text = item.text
+        .replaceAll('&nbsp;', ' ')
+        .replaceAll('&gt;', '>')
+        .replaceAll('&lt;', '<')
+        .replaceAll('&quot;', '"')
+        .replaceAll('&amp;', '&')
+        .replaceAll('&#x2f;', '/')
+        .replaceAll('&#x2F;', '/')
         .replaceAll('&#x27;', "'")
+        .replaceAll('&apos;', "'")
+        .replaceAll('<i>', '')
+        .replaceAll('<b>', '')
+        .replaceAll('<strong>', '')
+        .replaceAll('<pre>', '')
+        .replaceAll('<code>', '')
         .replaceAll('<p>', '\n\n')
-        .replaceAll('</p>', '');
+        .replaceAll('<a href="', 'link: ')
+        .replaceAll('rel="nofollow">', '')
+        .replaceAll('rel="nofollow"', '')
+        .replaceAll('</a>', '')
+        .replaceAll('</p>', '')
+        .replaceAll('</i>', '')
+        .replaceAll('</b>', '')
+        .replaceAll('</pre>', '')
+        .replaceAll('</code>', '')
+        .replaceAll('</strong>', '');
 
     return Text(text);
   }
